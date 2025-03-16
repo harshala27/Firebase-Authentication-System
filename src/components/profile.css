@@ -1,0 +1,148 @@
+/* General Styles */
+body {
+  background: url("../bg.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: -250px; /* Initially Hidden */
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(0, 0, 255, 0.7); /* Opaque Blue */
+  padding-top: 60px;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0; /* Slide-in */
+}
+
+/* Hamburger Button */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Sidebar List */
+.sidebar h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sidebar ul li svg {
+  margin-right: 10px;
+}
+
+.sidebar ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content */
+.dashboard-content {
+  flex-grow: 1;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.dashboard-content.shifted {
+  margin-left: 250px; /* Push when sidebar opens */
+}
+
+/* Profile Card */
+.profile-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #6e8efb;
+}
+
+.profile-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.profile-card p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.logout-btn {
+  background: rgba(0, 0, 255, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: rgba(0, 0, 255, 1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .dashboard-content {
+    padding: 30px;
+  }
+
+  .dashboard-content.shifted {
+    margin-left: 200px;
+  }
+
+  .profile-card {
+    width: 90%;
+  }
+}
